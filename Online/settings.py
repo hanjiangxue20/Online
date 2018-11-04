@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'organization.apps.OrganizationConfig',
+
+    #my app
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -104,6 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -126,9 +130,13 @@ STATICFILES_DIRS = [
     # os.path.join(BASE_DIR, 'static'),
 ]
 # STATIC_ROOT = "/var/py/xf/static/"
-
+# 设置上传文件的路径
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+AUTH_USER_MODEL = 'users.UserProfile'
+
 
 #  Email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
