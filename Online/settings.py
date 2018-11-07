@@ -11,10 +11,12 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -37,10 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'organization.apps.OrganizationConfig',
+    # the third part
+    'xadmin',
+    'crispy_forms',
 
-    #my app
+    # my app
     'users',
+    'course',
+    'operations',
+    'organization'
+
 ]
 
 MIDDLEWARE = [
@@ -79,13 +87,15 @@ WSGI_APPLICATION = 'Online.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Online',
-        'USER': 'root',
-        'PASSWORD': 'zkyr1006',
-        'HOST': '111.207.68.150',
-        # 'HOST': '192.168.1.137',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'Online',
+        # 'USER': 'root',
+        # 'PASSWORD': 'zkyr1006',
+        # 'HOST': '111.207.68.150',
+        # # 'HOST': '192.168.1.137',
+        # 'PORT': '3306',
     }
 }
 
@@ -107,7 +117,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -126,7 +135,7 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static/'),  #linux
+    os.path.join(BASE_DIR, 'static/'),  # linux
     # os.path.join(BASE_DIR, 'static'),
 ]
 # STATIC_ROOT = "/var/py/xf/static/"
@@ -134,9 +143,7 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
 AUTH_USER_MODEL = 'users.UserProfile'
-
 
 #  Email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
