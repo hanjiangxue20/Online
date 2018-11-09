@@ -11,6 +11,7 @@ def user_login(request):
         pass_word = request.POST.get('password', None)
         # 成功返回user对象，失败None
         user = authenticate(username=user_name, password=pass_word)
+        # 如果不是null说明验证成功
         if user is not None:
             #登录
             login(request,user)
