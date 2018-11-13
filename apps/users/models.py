@@ -16,7 +16,7 @@ class UserProfile(AbstractUser):
     image = models.ImageField(upload_to='image/%Y%m', default='image/default.png', max_length=100)
 
     class Meta:
-        db_table= 'user_profile'
+        db_table= 'userproperty_profile'
         verbose_name = '用户信息'
         verbose_name_plural = verbose_name
 
