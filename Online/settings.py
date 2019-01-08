@@ -93,8 +93,9 @@ DATABASES = {
         'NAME': 'Online',
         'USER': 'root',
         'PASSWORD': 'zkyr1006',
+        'HOST': 'localhost',
         # 'HOST': '58.132.209.229',
-        'HOST': '192.168.1.137',
+        # 'HOST': '192.168.1.137',
         'PORT': '3306',
     }
 }
@@ -152,6 +153,11 @@ EMAIL_HOST_USER = 'chengnian_20@163.com'
 EMAIL_HOST_PASSWORD = 'zkyr1006'  # 授权密码
 EMAIL_FROM = 'cheng<chengnian_20@163.com>'
 
+
+AUTHENTICATION_BACKENDS = (
+    'users.views.CustomBackend',
+)
+
 # 日志
 import logging
 import django.utils.log
@@ -179,7 +185,7 @@ LOGGING = {
         'default': {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': 'Online.log',  # '/var/py/xf/log/xf.log',#日志输出文件
+            'filename': 'log/Online.log',  # '/var/py/xf/log/xf.log',#日志输出文件
             'maxBytes': 1024 * 1024 * 5,  # 文件大小
             'backupCount': 5,  # 备份份数
             'formatter': 'standard',  # 使用哪种formatters日志格式
@@ -187,7 +193,7 @@ LOGGING = {
         'error': {
             'level': 'ERROR',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': 'error.log',  # '/var/py/xf/log/error.log',#
+            'filename': 'log/error.log',  # '/var/py/xf/log/error.log',#
             'maxBytes': 1024 * 1024 * 5,
             'backupCount': 5,
             'formatter': 'standard',
@@ -200,7 +206,7 @@ LOGGING = {
         'request_handler': {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': 'script.log',  # '/var/py/xf/log/script.log',#
+            'filename': 'log/script.log',  # '/var/py/xf/log/script.log',#
             'maxBytes': 1024 * 1024 * 5,
             'backupCount': 5,
             'formatter': 'standard',
@@ -208,7 +214,7 @@ LOGGING = {
         'scprits_handler': {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': 'script.log',  # '/var/py/xf/log/script.log',#
+            'filename': 'log/script.log',  # '/var/py/xf/log/script.log',#
             'maxBytes': 1024 * 1024 * 5,
             'backupCount': 5,
             'formatter': 'standard',
