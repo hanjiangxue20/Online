@@ -7,7 +7,6 @@ from django.db import models
 class UserProfile(AbstractUser):
     gender_choice = (
         ('male', '男'),
-        ('female', '女')
     )
     nick_name = models.CharField('昵称', max_length=50, default='')
     birthday = models.DateField('生日', null=True, blank=True)
