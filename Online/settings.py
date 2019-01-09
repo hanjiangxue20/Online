@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # the third part
     'xadmin',
     'crispy_forms',
+    'captcha',
 
     # my app
     'users',
@@ -93,8 +94,8 @@ DATABASES = {
         'NAME': 'Online',
         'USER': 'root',
         'PASSWORD': 'zkyr1006',
-        'HOST': 'localhost',
-        # 'HOST': '192.168.1.137',
+        # 'HOST': 'localhost',
+        'HOST': '192.168.1.137',
         'PORT': '3306',
     }
 }

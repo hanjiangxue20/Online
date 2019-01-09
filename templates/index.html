@@ -19,8 +19,6 @@
     <header>
         <div class=" header">
             <div class="top">
-
-
                 {% if request.user.is_authenticated %}
                     <div class="personal">
                         <dl class="user fr">
@@ -48,7 +46,7 @@
 
                         <!--登录后跳转-->
 
-                        <a style="color:white" class="fr registerbtn" href="register.html">注册</a>
+                        <a style="color:white" class="fr registerbtn" href="/register/">注册</a>
                         <a style="color:white" class="fr loginbtn" href="/login/">登录</a>
                     </div>
                 {% endif %}
