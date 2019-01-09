@@ -81,7 +81,6 @@ class RegisterView(View):
     '''
     用户注册
     '''
-
     def get(self, request):
         register_form = RegisterForm()
         return render(request, 'register.html', {'register_form': register_form})
