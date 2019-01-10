@@ -6,14 +6,14 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
 	<title>慕学网首页</title>
-	<link rel="stylesheet" type="text/css" href="../css/reset.css">
-	<link rel="stylesheet" type="text/css" href="../css/login.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
 </head>
 <body>
 <!--提示弹出框-->
 <div class="successbox dialogbox" id="jsSuccessTips">
     <h1>成功提交</h1>
-    <div class="close jsCloseDialog"><img src="../images/dig_close.png"/></div>
+    <div class="close jsCloseDialog"><img src="{% static 'images/dig_close.png' %}"/></div>
     <div class="cont">
         <h2>您的需求提交成功！</h2>
         <p></p>
@@ -21,7 +21,7 @@
 </div>
 <div class="resetpassbox dialogbox" id="jsSetNewPwd">
     <h1>重新设置密码</h1>
-    <div class="close jsCloseDialog"><img src="../images/dig_close.png"/></div>
+    <div class="close jsCloseDialog"><img src="{% static 'dig_close.png' %}"/></div>
     <p class="green">请输入新密码</p>
     <form id="jsSetNewPwdForm">
         <div class="box">
@@ -52,7 +52,7 @@
             <ul class="fr hd-bar">
                 <li>服务电话：<span>33333333</span></li>
                 <li><a href="login.html">[登录]</a></li>
-                <li class="active"><a href="/forgetpwd/">[忘记密码]</a></li>
+                <li class="active"><a href="{{  }}">[忘记密码]</a></li>
             </ul>
         </div>
     </div>

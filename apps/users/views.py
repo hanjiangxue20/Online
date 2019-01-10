@@ -5,7 +5,7 @@ from django.db.models import Q
 from django.views.generic.base import View
 
 from utils.email_send import send_register_eamil
-from .forms import LoginForm, RegisterForm
+from .forms import LoginForm, RegisterForm, ForgetPwdForm
 from .models import UserProfile, EmailVerifyRecord
 from django.contrib.auth.backends import ModelBackend
 
@@ -81,6 +81,7 @@ class RegisterView(View):
     '''
     用户注册
     '''
+
     def get(self, request):
         register_form = RegisterForm()
         return render(request, 'register.html', {'register_form': register_form})
@@ -126,6 +127,14 @@ class ActiveUserView(View):
             return render(request, 'active_failed.html')
         # 激活成功跳转到登录页面
         return render(request, 'login.html')
+
+
+class ForgetPwdView(View):
+    '''找回密码'''
+
+    def get(self, request):
+        forget_form = ForgetPwdForm()
+        return render(request, 'forgetpwd.html', {'forget_form': forget_form})
 
 
 # 邮箱和用户名都可以登录

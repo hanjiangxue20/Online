@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import path, include
 from django.views.generic import TemplateView
-from users.views import LoginView, RegisterView
+from users.views import LoginView, RegisterView, ForgetPwdView
 import xadmin
 
 app_name = 'online'
@@ -27,4 +27,5 @@ urlpatterns = [
     path('login/', LoginView.as_view(), name='login'),
     path('register/', RegisterView.as_view(), name='register'),
     path('captcha/', include('captcha.urls')),
+    path('forget/', ForgetPwdView.as_view(), name='forget'),
 ]
