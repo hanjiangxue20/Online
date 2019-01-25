@@ -152,7 +152,6 @@ EMAIL_HOST_USER = 'chengnian_20@163.com'
 EMAIL_HOST_PASSWORD = 'zkyr1006'  # 授权密码
 EMAIL_FROM = 'cheng<chengnian_20@163.com>'
 
-
 AUTHENTICATION_BACKENDS = (
     'users.views.CustomBackend',
 )
