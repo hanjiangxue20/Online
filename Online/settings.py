@@ -76,6 +76,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                #添加图片处理器，为了在课程列表中前面加上MEDIA_URL
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -94,8 +96,7 @@ DATABASES = {
         'NAME': 'Online',
         'USER': 'root',
         'PASSWORD': 'zkyr1006',
-        # 'HOST': '192.168.1.137',
-        'HOST': '58.132.209.229',
+        'HOST': '192.168.1.137',
         'PORT': '3306',
     }
 }
