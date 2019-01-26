@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     # the third part
     'xadmin',
     'crispy_forms',
-    'captcha',
+    'captcha',      #验证码
+    'pure_pagination', #分页神器
 
     # my app
     'users',
@@ -96,7 +97,7 @@ DATABASES = {
         'NAME': 'Online',
         'USER': 'root',
         'PASSWORD': 'zkyr1006',
-        'HOST': '192.168.1.137',
+        # 'HOST': '192.168.1.137',
         'PORT': '3306',
     }
 }

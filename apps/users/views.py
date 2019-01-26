@@ -197,3 +197,7 @@ class CustomBackend(ModelBackend):
                 return user
         except Exception as e:
             return None
+
+
+class UserinfoView(View):
+    pass
