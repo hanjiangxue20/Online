@@ -76,6 +76,8 @@ class LoginView(View):
         else:
             return render(request, 'login.html', {'login_form': login_form})
 
+class LogoutView(View):
+    pass
 
 class RegisterView(View):
     '''

@@ -18,7 +18,7 @@ from django.views.generic import TemplateView
 from Online.settings import MEDIA_ROOT
 from django.views.static import serve
 
-from users.views import LoginView, RegisterView, ForgetPwdView, ActiveUserView, ResetView, ModifyPwdView
+from users.views import LoginView,LogoutView, RegisterView, ForgetPwdView, ActiveUserView, ResetView, ModifyPwdView
 import xadmin
 
 app_name = 'online'
@@ -28,6 +28,7 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
     # path('login/', views.user_login, name='login'),
     path('login/', LoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
     path('register/', RegisterView.as_view(), name='register'),
     path('captcha/', include('captcha.urls')),
     path('forget/', ForgetPwdView.as_view(), name='forget_pwd'),
